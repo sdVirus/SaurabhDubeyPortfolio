@@ -341,7 +341,7 @@
                     <img src="/resource/Poetry/7.webp" class="rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity aspect-square object-cover" onclick="openLightbox(this.src)">
                     
                     <!-- Fifth Link Image to "Your Quotes Page" -->
-                    <a href="https://www.yourquote.in/saurabh-dubey-dujtp/quotes" target="_blank" class="nav-router bg-primary-blue dark:bg-dark-card rounded-lg shadow-md cursor-pointer hover:opacity-90 transition-opacity flex items-center justify-center text-center p-4 aspect-square">
+                    <a href="https://www.yourquote.in/saurabh-dubey-dujtp/quotes" onclick="window.location.href='https://www.yourquote.in/saurabh-dubey-dujtp/quotes'" target="_blank" class="nav-router bg-primary-blue dark:bg-dark-card rounded-lg shadow-md cursor-pointer hover:opacity-90 transition-opacity flex items-center justify-center text-center p-4 aspect-square">
                         <span class="text-white font-bold text-lg leading-relaxed">Read More on yourquote.in &rarr;</span>
                     </a>
                 </div>
@@ -369,7 +369,7 @@
                             <img src="./resource/book covers/headFirstJava.jpg" class="mx-auto mb-4 shadow-lg" alt="Clean Code">
                             <h3 class="font-heading font-bold text-xl dark:text-white">Head First Java</h3>
                             <p class="text-gray-500 dark:text-gray-400 mb-2">by Kathy Sierra & Bert Bates</p>
-                            <p class="text-sm">Why I recommend it: Perfect for beginners who want to build a strong foundation in Java. The book uses visuals, stories, and real-life analogies to make complex concepts simple and fun. It doesn’t just teach Java syntax—it helps you think in Java.</p>
+                            <p class="text-sm">Why I recommend it: Perfect for beginners who want to build a strong foundation in Java. The book uses visuals, stories, and real-life analogies to make complex concepts simple and fun. It doesn’t just teach Java syntax—it helps you think in Java</p>
                         </div>
                          <div class="text-center bg-white dark:bg-dark-card p-6 rounded-lg shadow-md">
                             <img src="./resource/book covers/cleanCode.jpg" class="mx-auto mb-4 shadow-lg" alt="Clean Code">
@@ -383,7 +383,14 @@
                             <p class="text-gray-500 dark:text-gray-400 mb-2">by Andrew Hunt</p>
                             <p class="text-sm">Why I recommend it: Full of practical advice that goes beyond just writing code, covering topics like career development and personal responsibility.</p>
                         </div>
+                        <div class="book-card-footer">
+                                <a href="#bookshelf" class="group inline-flex items-center text-accent-orange font-bold py-2 px-6 rounded-full border border-accent-orange hover:bg-accent-orange hover:text-white transition-all duration-300 justify-center">
+                                    See More Books
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </a>
+                            </div>
                     </div>
+                    
                 </div>
                  <div>
                     <h3 class="text-2xl font-bold text-center text-gray-700 dark:text-gray-300 mb-8">For the Creative Soul</h3>
@@ -391,21 +398,27 @@
                          <div class="text-center bg-white dark:bg-dark-card p-6 rounded-lg shadow-md">
                             <img src="./resource/book covers/rashmirathi.jpg" class="mx-auto mb-4 shadow-lg" alt="Sapiens">
                             <h3 class="font-heading font-bold text-xl dark:text-white">Rashmirathi</h3>
-                            <p class="text-gray-500 dark:text-gray-400 mb-2">by Ramdhari sing dinkar</p>
-                            <p class="text-sm">Why I recommend it: A mind-expanding look at human history that provides incredible perspective on our world today.</p>
+                            <p class="text-gray-500 dark:text-gray-400 mb-2">by Ramdhari Singh 'Dinkar'</p>
+                            <p class="text-sm">Why I recommend it: A timeless Hindi epic that beautifully blends emotion, valor, and philosophy. It brings Karna’s character to life with unmatched depth and poetic brilliance. This masterpiece inspires strength, humility, and reflection on destiny and righteousness.</p>
                         </div>
                          <div class="text-center bg-white dark:bg-dark-card p-6 rounded-lg shadow-md">
                             <img src="./resource/book covers/dear stranger i know how you feel.jpg" class="mx-auto mb-4 shadow-lg" alt="The Alchemist">
-                            <h3 class="font-heading font-bold text-xl dark:text-white">The Alchemist</h3>
-                            <p class="text-gray-500 dark:text-gray-400 mb-2">by Paulo Coelho</p>
-                            <p class="text-sm">Why I recommend it: A beautiful story about following your dreams. It inspires my creative side and reminds me to enjoy the journey.</p>
+                            <h3 class="font-heading font-bold text-xl dark:text-white">Dear Stranger, I Know How You Feel</h3>
+                            <p class="text-gray-500 dark:text-gray-400 mb-2">by Ashish Bagrecha</p>
+                            <p class="text-sm">Why I recommend it: A heart-touching collection of letters and reflections that speak gently to your emotions. It offers comfort, healing, and hope for anyone battling loneliness or self-doubt. This book feels like a warm conversation with a friend who truly understands your pain and helps you find light again.</p>
                         </div>
                         <div class="text-center bg-white dark:bg-dark-card p-6 rounded-lg shadow-md">
                             <img src="./resource/book covers/syw.jpg" class="mx-auto mb-4 shadow-lg" alt="Leaves of Grass">
-                            <h3 class="font-heading font-bold text-xl dark:text-white">Leaves of Grass</h3>
-                            <p class="text-gray-500 dark:text-gray-400 mb-2">by Walt Whitman</p>
-                            <p class="text-sm">Why I recommend it: Whitman's celebration of life, nature, and the human spirit is a constant source of inspiration for my own poetry.</p>
+                            <h3 class="font-heading font-bold text-xl dark:text-white">Show Your Work!</h3>
+                            <p class="text-gray-500 dark:text-gray-400 mb-2">by Austin Kleon</p>
+                            <p class="text-sm">Why I recommend it: A powerful guide for creatives and professionals who want to share their ideas with the world. It teaches that you don’t have to be a genius—just be open, consistent, and authentic. This book changed how I see creativity, encouraging me to share my process, not just the final product.</p>
                         </div>
+                        <div class="book-card-footer">
+                                <a href="#bookshelf" class="group inline-flex items-center text-accent-orange font-bold py-2 px-6 rounded-full border border-accent-orange hover:bg-accent-orange hover:text-white transition-all duration-300 justify-center">
+                                    See More Books
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </a>
+                            </div>
                     </div>
                 </div>
              </div>
