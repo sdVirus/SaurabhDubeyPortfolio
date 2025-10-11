@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookshelf Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Slate 50 background */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app" class="min-h-screen p-4 sm:p-8">
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-2">My Digital Bookshelf</h1>
+            <p class="text-lg text-gray-600">A collection of stories and knowledge that inspires my journey.</p>
+        </header>
+
+        <!-- Bookshelf Content will be rendered here -->
+        <div id="bookshelf-container">
+            <!-- Dynamic content will be injected by JavaScript -->
+        </div>
+
+    </div>
+
+    <script>
+        // Data structure for the bookshelf
+        // IMPORTANT: Replace the placeholder data and URLs with your actual book information!
+        const bookshelfData = {
+            "Science Fiction & Fantasy": [
+                { title: "Dune", author: "Frank Herbert", cover: "https://placehold.co/150x225/2563eb/ffffff?text=Dune" },
+                { title: "Project Hail Mary", author: "Andy Weir", cover: "https://placehold.co/150x225/16a34a/ffffff?text=Hail+Mary" },
+                { title: "Mistborn: The Final Empire", author: "Brandon Sanderson", cover: "https://placehold.co/150x225/9333ea/ffffff?text=Mistborn" },
+                { title: "Foundation", author: "Isaac Asimov", cover: "https://placehold.co/150x225/ca8a04/ffffff?text=Foundation" },
+            ],
+            "Classic Literature": [
+                { title: "To Kill a Mockingbird", author: "Harper Lee", cover: "https://placehold.co/150x225/dc2626/ffffff?text=Mockingbird" },
+                { title: "1984", author: "George Orwell", cover: "https://placehold.co/150x225/475569/ffffff?text=1984" },
+            ],
+            "Non-Fiction & Productivity": [
+                { title: "Atomic Habits", author: "James Clear", cover: "https://placehold.co/150x225/0f766e/ffffff?text=Atomic+Habits" },
+                { title: "Sapiens: A Brief History", author: "Yuval Noah Harari", cover: "https://placehold.co/150x225/1d4ed8/ffffff?text=Sapiens" },
+                { title: "Clean Code", author: "Robert C. Martin", cover: "https://placehold.co/150x225/f97316/ffffff?text=Clean+Code" },
+            ],
+            "Mystery & Thriller": [
+                { title: "The Da Vinci Code", author: "Dan Brown", cover: "https://placehold.co/150x225/a8a29e/ffffff?text=Da+Vinci+Code" },
+            ]
+        };
+
+        const container = document.getElementById('bookshelf-container');
+
+        /**
+         * Creates the HTML structure for a single book card.
+         * @param {object} book - The book object containing title, author, and cover.
+         * @returns {string} - The HTML string for the book card.
+         */
+        function createBookCard(book) {
+            // Using object destructuring for clean access
+            const { title, author, cover } = book;
+
+            // TailWind classes for a nice, responsive card look
+            return `
+                <div class="book-card bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <img
+                        src="${cover}"
+                        alt="Cover for ${title}"
+                        class="w-full h-auto object-cover rounded-md mb-4 aspect-[2/3] mx-auto border border-gray-100"
+                        style="max-width: 150px;"
+                        onerror="this.onerror=null; this.src='https://placehold.co/150x225/6b7280/ffffff?text=Cover+Missing';"
+                    >
+                    <h3 class="text-lg font-semibold text-gray-900 truncate" title="${title}">${title}</h3>
+                    <p class="text-sm text-gray-500 mt-1">${author}</p>
+                </div>
+            `;
+        }
+
+        /**
+         * Renders the entire bookshelf content onto the page.
+         */
+        function renderBookshelf() {
+            let htmlContent = '';
+
+            for (const genre in bookshelfData) {
+                const books = bookshelfData[genre];
+
+                // Start of Genre Section
+                htmlContent += `
+                    <section class="mb-12">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 border-b-2 border-indigo-500 pb-2 mb-6 inline-block">${genre}</h2>
+
+                        <!-- Grid layout for responsiveness: 2 columns on small, 3 on medium, 4 on large screens -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                `;
+
+                // Add all book cards for the current genre
+                books.forEach(book => {
+                    htmlContent += createBookCard(book);
+                });
+
+                // End of Genre Section and Grid
+                htmlContent += `
+                        </div>
+                    </section>
+                `;
+            }
+
+            // Inject the generated HTML into the container
+            container.innerHTML = htmlContent;
+        }
+
+        // Run the rendering function when the page loads
+        document.addEventListener('DOMContentLoaded', renderBookshelf);
+    </script>
+</body>
+</html>
